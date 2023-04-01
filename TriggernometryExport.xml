@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="3f087704-0d8e-443c-9b31-0733cadf672d" Name="TOP P4" Enabled="false">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Name="获取欧米茄ID" Id="57c4a503-77af-4381-9c6a-3762d3e47161" RegularExpression="^.{14} (?:\w+ )14:(?&lt;id&gt;.{8}):[^:]*:7B81:" PeriodRefire="Deny" RefirePeriodExpression="100000">
+        <Actions>
+          <Action OrderNumber="1" VariableOp="SetString" VariableName="欧米茄id" VariableExpression="${numeric:hex2dec(${id})}" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;foreach&quot;,&#xD;&#xA;    &quot;name&quot;: &quot;target_id&quot;,&#xD;&#xA;    &quot;values&quot;: {&quot;key&quot;: &quot;actors_by_type&quot;, &quot;type&quot;: 1},&#xD;&#xA;    &quot;func&quot;: {&#xD;&#xA;        &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;        &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;        &quot;shape_scale&quot;:{&quot;key&quot;:&quot;rect&quot;,&quot;width&quot;:6.5,&quot;range&quot;:60},&#xD;&#xA;        &quot;pos&quot;: [100,0,100],&#xD;&#xA;        &quot;facing&quot;: {&#xD;&#xA;            &quot;key&quot;: &quot;actor_relative_facing&quot;,&#xD;&#xA;            &quot;src&quot;: {&quot;id&quot;:${numeric:hex2dec(${id})}},&#xD;&#xA;            &quot;dst&quot;:{&quot;key&quot;:&quot;arg&quot;,&quot;name&quot;:&quot;target_id&quot;}}&#xD;&#xA;        },&#xD;&#xA;        &quot;duration&quot;: 5&#xD;&#xA;}" ActionType="GenericJson">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;circle&quot;,&#xD;&#xA;        &quot;range&quot;: 6&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 5.4&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="2600">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 6,&#xD;&#xA;        &quot;range&quot;: 12.5&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 6.8&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="3300">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;foreach&quot;,&#xD;&#xA;    &quot;name&quot;: &quot;target_id&quot;,&#xD;&#xA;    &quot;values&quot;: {&quot;key&quot;: &quot;actors_by_type&quot;, &quot;type&quot;: 1},&#xD;&#xA;    &quot;func&quot;: {&#xD;&#xA;        &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;        &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;        &quot;shape_scale&quot;:{&quot;key&quot;:&quot;rect&quot;,&quot;width&quot;:6.5,&quot;range&quot;:60},&#xD;&#xA;        &quot;pos&quot;: [100,0,100],&#xD;&#xA;        &quot;facing&quot;: {&#xD;&#xA;            &quot;key&quot;: &quot;actor_relative_facing&quot;,&#xD;&#xA;            &quot;src&quot;: {&quot;id&quot;:${numeric:hex2dec(${id})}},&#xD;&#xA;            &quot;dst&quot;:{&quot;key&quot;:&quot;arg&quot;,&quot;name&quot;:&quot;target_id&quot;}}&#xD;&#xA;        },&#xD;&#xA;        &quot;duration&quot;: 4.5&#xD;&#xA;}" ActionType="GenericJson" ExecutionDelayExpression="5600">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="6" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 12.5,&#xD;&#xA;        &quot;range&quot;: 18&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="15100">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 18,&#xD;&#xA;        &quot;range&quot;: 20&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="17100">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="8" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;foreach&quot;,&#xD;&#xA;    &quot;name&quot;: &quot;target_id&quot;,&#xD;&#xA;    &quot;values&quot;: {&quot;key&quot;: &quot;actors_by_type&quot;, &quot;type&quot;: 1},&#xD;&#xA;    &quot;func&quot;: {&#xD;&#xA;        &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;        &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;        &quot;shape_scale&quot;:{&quot;key&quot;:&quot;rect&quot;,&quot;width&quot;:6.5,&quot;range&quot;:60},&#xD;&#xA;        &quot;pos&quot;: [100,0,100],&#xD;&#xA;        &quot;facing&quot;: {&#xD;&#xA;            &quot;key&quot;: &quot;actor_relative_facing&quot;,&#xD;&#xA;            &quot;src&quot;: {&quot;id&quot;:${numeric:hex2dec(${id})}},&#xD;&#xA;            &quot;dst&quot;:{&quot;key&quot;:&quot;arg&quot;,&quot;name&quot;:&quot;target_id&quot;}}&#xD;&#xA;        },&#xD;&#xA;        &quot;duration&quot;: 5&#xD;&#xA;}" ActionType="GenericJson" ExecutionDelayExpression="20200">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="9" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;circle&quot;,&#xD;&#xA;        &quot;range&quot;: 6&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="23200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="10" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 6,&#xD;&#xA;        &quot;range&quot;: 12.5&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="25200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="11" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 12.5,&#xD;&#xA;        &quot;range&quot;: 18&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="27200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="12" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 18,&#xD;&#xA;        &quot;range&quot;: 20&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="29200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="13" NamedCallbackName="command" NamedCallbackParam="/e ${numeric:hex2dec(${id})} ,,${id}" Enabled="False" ActionType="NamedCallback">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="23.2s 第二次钢铁" Id="3dfec2ab-895a-4cab-80cb-d99b7b08b76e" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;circle&quot;,&#xD;&#xA;        &quot;range&quot;: 6&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="23200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="2.6s 第一次钢铁" Id="ad28d49b-a53c-4cbf-be67-cd0fe28f0f6f" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;circle&quot;,&#xD;&#xA;        &quot;range&quot;: 6&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 5.4&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="2600">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="3.3s 第一次月环1" Id="d834b7b9-f5af-4a4e-afa2-73c9ab551509" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 6,&#xD;&#xA;        &quot;range&quot;: 12.5&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 6.8&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="3300">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="25.2s 第二次月环1" Id="36cd3e41-f778-4af0-97b2-20c519c90700" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 6,&#xD;&#xA;        &quot;range&quot;: 12.5&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="25200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="15.1s 第一次月环2" Id="099c7821-40e1-4130-b479-1400a971e398" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 12.5,&#xD;&#xA;        &quot;range&quot;: 18&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="15100">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="27.2s 第二次月环2" Id="f92b493c-4fdc-4ca9-85f6-3af95e04691c" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 12.5,&#xD;&#xA;        &quot;range&quot;: 18&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="27200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="17.1s 第一次月环3" Id="5a1b8553-9b54-4f18-961f-60d81672c523" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 18,&#xD;&#xA;        &quot;range&quot;: 20&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="17100">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="29.2s 第一次月环3" Id="098f2ec5-d6db-4391-aa9e-b7ffa6e83564" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;    &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;    &quot;shape_scale&quot;: {&#xD;&#xA;        &quot;key&quot;: &quot;donut&quot;,&#xD;&#xA;        &quot;inner&quot;: 18,&#xD;&#xA;        &quot;range&quot;: 20&#xD;&#xA;    },&#xD;&#xA;    &quot;pos&quot;: [100,0,100],&#xD;&#xA;    &quot;duration&quot;: 2&#xD;&#xA;}" PlaySpeechMyself="True" UseTTSTextExpression="死刑" UseTTSRateExpression="2" ActionType="GenericJson" ExecutionDelayExpression="29200">
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${type}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="0s 第一次八方" Id="8c38d437-9cc9-4b2b-8304-f955e1223428" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;foreach&quot;,&#xD;&#xA;    &quot;name&quot;: &quot;target_id&quot;,&#xD;&#xA;    &quot;values&quot;: {&quot;key&quot;: &quot;actors_by_type&quot;, &quot;type&quot;: 1},&#xD;&#xA;    &quot;func&quot;: {&#xD;&#xA;        &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;        &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;        &quot;shape_scale&quot;:{&quot;key&quot;:&quot;rect&quot;,&quot;width&quot;:6.5,&quot;range&quot;:60},&#xD;&#xA;        &quot;pos&quot;: [100,0,100],&#xD;&#xA;        &quot;facing&quot;: {&#xD;&#xA;            &quot;key&quot;: &quot;actor_relative_facing&quot;,&#xD;&#xA;            &quot;src&quot;: {&quot;id&quot;:${numeric:hex2dec(${id})}},&#xD;&#xA;            &quot;dst&quot;:{&quot;key&quot;:&quot;arg&quot;,&quot;name&quot;:&quot;target_id&quot;}}&#xD;&#xA;        },&#xD;&#xA;        &quot;duration&quot;: 5&#xD;&#xA;}" ActionType="GenericJson">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="5.6s 第二次八方" Id="65f6521f-1710-44df-9b47-d315b8832e1b" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;foreach&quot;,&#xD;&#xA;    &quot;name&quot;: &quot;target_id&quot;,&#xD;&#xA;    &quot;values&quot;: {&quot;key&quot;: &quot;actors_by_type&quot;, &quot;type&quot;: 1},&#xD;&#xA;    &quot;func&quot;: {&#xD;&#xA;        &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;        &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;        &quot;shape_scale&quot;:{&quot;key&quot;:&quot;rect&quot;,&quot;width&quot;:6.5,&quot;range&quot;:60},&#xD;&#xA;        &quot;pos&quot;: [100,0,100],&#xD;&#xA;        &quot;facing&quot;: {&#xD;&#xA;            &quot;key&quot;: &quot;actor_relative_facing&quot;,&#xD;&#xA;            &quot;src&quot;: {&quot;id&quot;:${numeric:hex2dec(${id})}},&#xD;&#xA;            &quot;dst&quot;:{&quot;key&quot;:&quot;arg&quot;,&quot;name&quot;:&quot;target_id&quot;}}&#xD;&#xA;        },&#xD;&#xA;        &quot;duration&quot;: 4.5&#xD;&#xA;}" ActionType="GenericJson" ExecutionDelayExpression="5600">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="false" Name="20.2s 第三次八方" Id="e8652740-82f7-4095-a384-bb0a8e744f7f" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:8001/rpc" JsonPayloadExpression="{&#xD;&#xA;    &quot;cmd&quot;: &quot;foreach&quot;,&#xD;&#xA;    &quot;name&quot;: &quot;target_id&quot;,&#xD;&#xA;    &quot;values&quot;: {&quot;key&quot;: &quot;actors_by_type&quot;, &quot;type&quot;: 1},&#xD;&#xA;    &quot;func&quot;: {&#xD;&#xA;        &quot;cmd&quot;: &quot;add_omen&quot;,&#xD;&#xA;        &quot;color&quot;: &quot;enemy&quot;,&#xD;&#xA;        &quot;shape_scale&quot;:{&quot;key&quot;:&quot;rect&quot;,&quot;width&quot;:6.5,&quot;range&quot;:60},&#xD;&#xA;        &quot;pos&quot;: [100,0,100],&#xD;&#xA;        &quot;facing&quot;: {&#xD;&#xA;            &quot;key&quot;: &quot;actor_relative_facing&quot;,&#xD;&#xA;            &quot;src&quot;: {&quot;id&quot;:${numeric:hex2dec(${id})}},&#xD;&#xA;            &quot;dst&quot;:{&quot;key&quot;:&quot;arg&quot;,&quot;name&quot;:&quot;target_id&quot;}}&#xD;&#xA;        },&#xD;&#xA;        &quot;duration&quot;: 5&#xD;&#xA;}" ActionType="GenericJson" ExecutionDelayExpression="20200">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
